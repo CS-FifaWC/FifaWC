@@ -1,0 +1,8 @@
+{
+    "name": "Football Analysis Dev Container",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "flask-app",
+    "workspaceFolder": "/app",
+    "postCreateCommand": "pip install --no-cache-dir -r requirements.txt",
+    "remoteUser": "root"
+}
