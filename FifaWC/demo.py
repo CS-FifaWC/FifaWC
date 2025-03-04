@@ -1,13 +1,16 @@
 import requests
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+API_KEY = os.getenv("API_KEY")
 
 url = "https://v3.football.api-sports.io/leagues"
-
-payload={}
 headers = {
-  'x-rapidapi-key': 'be57b04cba0af2b105d88551e7f1093f',
-  'x-rapidapi-host': 'v3.football.api-sports.io'
+    'x-rapidapi-key': API_KEY,
+    'x-rapidapi-host': 'v3.football.api-sports.io'
 }
 
-response = requests.request("GET", url, headers=headers, data=payload)
-
+response = requests.get(url, headers=headers)
 print(response.text)
